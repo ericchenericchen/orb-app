@@ -15,6 +15,8 @@
 		40BFBF2E2C45AA61002C597B /* OrbitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF2D2C45AA61002C597B /* OrbitTests.swift */; };
 		40BFBF382C45AA61002C597B /* OrbitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF372C45AA61002C597B /* OrbitUITests.swift */; };
 		40BFBF3A2C45AA61002C597B /* OrbitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF392C45AA61002C597B /* OrbitUITestsLaunchTests.swift */; };
+		40BFBF4C2C45CE44002C597B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF4B2C45CE44002C597B /* RegisterView.swift */; };
+		40BFBF4E2C45D882002C597B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF4D2C45D882002C597B /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		40BFBF332C45AA61002C597B /* OrbitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFBF372C45AA61002C597B /* OrbitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitUITests.swift; sourceTree = "<group>"; };
 		40BFBF392C45AA61002C597B /* OrbitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		40BFBF4B2C45CE44002C597B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		40BFBF4D2C45D882002C597B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +100,10 @@
 		40BFBF192C45AA5E002C597B /* Orbit */ = {
 			isa = PBXGroup;
 			children = (
-				40BFBF1A2C45AA5E002C597B /* OrbitApp.swift */,
-				40BFBF1C2C45AA5E002C597B /* ContentView.swift */,
-				40BFBF1E2C45AA5E002C597B /* Item.swift */,
-				40BFBF202C45AA61002C597B /* Assets.xcassets */,
+				40BFBF492C45CB6F002C597B /* Other */,
+				40BFBF482C45CB67002C597B /* Models */,
+				40BFBF472C45CB4F002C597B /* ViewModels */,
+				40BFBF462C45CB45002C597B /* Views */,
 				40BFBF222C45AA61002C597B /* Preview Content */,
 			);
 			path = Orbit;
@@ -128,6 +132,40 @@
 				40BFBF392C45AA61002C597B /* OrbitUITestsLaunchTests.swift */,
 			);
 			path = OrbitUITests;
+			sourceTree = "<group>";
+		};
+		40BFBF462C45CB45002C597B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40BFBF1C2C45AA5E002C597B /* ContentView.swift */,
+				40BFBF4B2C45CE44002C597B /* RegisterView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40BFBF472C45CB4F002C597B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		40BFBF482C45CB67002C597B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40BFBF1E2C45AA5E002C597B /* Item.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40BFBF492C45CB6F002C597B /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				40BFBF202C45AA61002C597B /* Assets.xcassets */,
+				40BFBF1A2C45AA5E002C597B /* OrbitApp.swift */,
+				40BFBF4D2C45D882002C597B /* ColorExtension.swift */,
+			);
+			path = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +256,9 @@
 				Base,
 			);
 			mainGroup = 40BFBF0E2C45AA5E002C597B;
+			packageReferences = (
+				40BFBF4A2C45CCD0002C597B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 40BFBF182C45AA5E002C597B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -261,8 +302,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BFBF1D2C45AA5E002C597B /* ContentView.swift in Sources */,
+				40BFBF4C2C45CE44002C597B /* RegisterView.swift in Sources */,
 				40BFBF1F2C45AA5E002C597B /* Item.swift in Sources */,
 				40BFBF1B2C45AA5E002C597B /* OrbitApp.swift in Sources */,
+				40BFBF4E2C45D882002C597B /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,6 +629,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40BFBF4A2C45CCD0002C597B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 40BFBF0F2C45AA5E002C597B /* Project object */;
 }

@@ -19,7 +19,6 @@
 		40BFBF4E2C45D882002C597B /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF4D2C45D882002C597B /* ColorExtension.swift */; };
 		40BFBF512C4887AC002C597B /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF502C4887AC002C597B /* LoginView.swift */; };
 		40BFBF532C48883F002C597B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF522C48883F002C597B /* LoadingView.swift */; };
-		40BFBF552C4888EE002C597B /* AnimationTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF542C4888EE002C597B /* AnimationTestView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +54,6 @@
 		40BFBF4D2C45D882002C597B /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		40BFBF502C4887AC002C597B /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		40BFBF522C48883F002C597B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		40BFBF542C4888EE002C597B /* AnimationTestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationTestView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +145,6 @@
 				40BFBF4B2C45CE44002C597B /* RegisterView.swift */,
 				40BFBF502C4887AC002C597B /* LoginView.swift */,
 				40BFBF522C48883F002C597B /* LoadingView.swift */,
-				40BFBF542C4888EE002C597B /* AnimationTestView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 				40BFBF4C2C45CE44002C597B /* RegisterView.swift in Sources */,
 				40BFBF1F2C45AA5E002C597B /* Item.swift in Sources */,
 				40BFBF1B2C45AA5E002C597B /* OrbitApp.swift in Sources */,
-				40BFBF552C4888EE002C597B /* AnimationTestView.swift in Sources */,
 				40BFBF532C48883F002C597B /* LoadingView.swift in Sources */,
 				40BFBF4E2C45D882002C597B /* ColorExtension.swift in Sources */,
 			);

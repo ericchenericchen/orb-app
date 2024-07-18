@@ -28,7 +28,7 @@ struct LoadingView: View {
                 // Glow effect
                 Circle()
                     .fill(Color.bgGlow)
-                    .frame(width: UIScreen.main.bounds.width * 1.5, height: UIScreen.main.bounds.width * 1.5)
+                    .frame(width: UIScreen.main.bounds.width * (isAnimated ? 1 : 1.5), height: UIScreen.main.bounds.width * (isAnimated ? 1 : 1.5))
                     .blur(radius: 120) // Adjust the blur radius as needed
                     .opacity(0.75) // Adjust the opacity as needed
                 

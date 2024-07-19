@@ -36,6 +36,11 @@ struct LoadingView: View {
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(width: UIScreen.main.bounds.width * (isAnimated ? 0.75 : 1.5), height: UIScreen.main.bounds.width * (isAnimated ? 0.75 : 1.5))
+                    .rotationEffect( Angle.degrees(isAnimated ? 0 : -180), anchor: .center)
+                
+//                Circle()
+//                    .fill(Color.red)
+//                    .frame(width: 10, height: 10)
             }
             .offset(x: 0, y: isAnimated ? 0 : UIScreen.main.bounds.height / 3)
             .animation(.easeInOut(duration: 2), value: isAnimated)

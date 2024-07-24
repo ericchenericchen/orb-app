@@ -8,9 +8,31 @@
 import SwiftUI
 import SwiftData
 
+// Custom view for circular item
+struct CircularItemView: View {
+    var timestamp: Date
+
+    var body: some View {
+        Circle()
+            .fill(Color.blue)
+            .frame(width: 150, height: 150)
+            .overlay(
+                Text(timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                    .foregroundColor(.white)
+                    .padding(10)
+            )
+            .padding(5)
+    }
+}
+
 struct ContentView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    
+    init() {
+        UITableView.appearance().backgroundColor = .clear
+        UITableViewCell.appearance().backgroundColor = .clear
+    }
 
     var body: some View {
         NavigationSplitView {
@@ -19,11 +41,17 @@ struct ContentView: View {
                     NavigationLink {
                         Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
                     } label: {
-                        Text(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
+                        HStack {
+                            Spacer()
+                            CircularItemView(timestamp: item.timestamp)
+                            Spacer()
+                        }
+                        .listRowBackground(Color.clear) // Make row background clear
                     }
                 }
                 .onDelete(perform: deleteItems)
             }
+            .scrollContentBackground(.hidden)
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     EditButton()

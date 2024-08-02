@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		40BBBD042C52FDFC00CD6B54 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBBD032C52FDFC00CD6B54 /* OverlayView.swift */; };
 		40BFBF1B2C45AA5E002C597B /* OrbitApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF1A2C45AA5E002C597B /* OrbitApp.swift */; };
 		40BFBF1D2C45AA5E002C597B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF1C2C45AA5E002C597B /* ContentView.swift */; };
 		40BFBF1F2C45AA5E002C597B /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BFBF1E2C45AA5E002C597B /* Item.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40BBBD032C52FDFC00CD6B54 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
 		40BFBF172C45AA5E002C597B /* Orbit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Orbit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		40BFBF1A2C45AA5E002C597B /* OrbitApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitApp.swift; sourceTree = "<group>"; };
 		40BFBF1C2C45AA5E002C597B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				40BFBF4B2C45CE44002C597B /* RegisterView.swift */,
 				40BFBF502C4887AC002C597B /* LoginView.swift */,
 				40BFBF522C48883F002C597B /* LoadingView.swift */,
+				40BBBD032C52FDFC00CD6B54 /* OverlayView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -308,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40BFBF512C4887AC002C597B /* LoginView.swift in Sources */,
+				40BBBD042C52FDFC00CD6B54 /* OverlayView.swift in Sources */,
 				40BFBF1D2C45AA5E002C597B /* ContentView.swift in Sources */,
 				40BFBF4C2C45CE44002C597B /* RegisterView.swift in Sources */,
 				40BFBF1F2C45AA5E002C597B /* Item.swift in Sources */,

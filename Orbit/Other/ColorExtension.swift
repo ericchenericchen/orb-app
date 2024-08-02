@@ -12,6 +12,7 @@ extension Color {
     //Define custom colors to add to Color struct
     static let bgBlue = Color(hex: "0C1830")
     static let bgGlow = Color(hex: "8B9CF3")
+    static let gradientBlack = Color(hex: "999999")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)

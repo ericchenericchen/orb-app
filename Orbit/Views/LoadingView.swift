@@ -10,6 +10,7 @@ import SwiftUI
 struct LoadingView: View {
     @State private var isAnimated = false
     @State private var textAnimated = false
+    @Binding var showRegister: Bool
 
     var body: some View {
         ZStack{
@@ -57,6 +58,8 @@ struct LoadingView: View {
                     if(textAnimated){
                         textAnimated.toggle()
                         isAnimated.toggle()
+                        showRegister.toggle()
+
                     }
                 }){
                     Text("let's get started")
@@ -76,10 +79,13 @@ struct LoadingView: View {
             }
             
         }.edgesIgnoringSafeArea(.all)
+//            .fullScreenCover(isPresented: $showRegister) {
+//                RegisterView(showRegister)
+//            }
     }
 
 }
 
 #Preview {
-    LoadingView()
+    LoadingView(showRegister: .constant(false))
 }

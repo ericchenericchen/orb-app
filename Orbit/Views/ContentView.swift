@@ -26,64 +26,23 @@ struct CircularItemView: View {
 }
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var items: [Item]
-    
-    init() {
-        UITableView.appearance().backgroundColor = .clear
-        UITableViewCell.appearance().backgroundColor = .clear
-    }
+    @State private var showRegister = false
 
     var body: some View {
-        NavigationSplitView {
-            List {
-                ForEach(items) { item in
-                    NavigationLink {
-                        Text("Item at \(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                    } label: {
-                        HStack {
-                            Spacer()
-                            CircularItemView(timestamp: item.timestamp)
-                            Spacer()
-                        }
-                        .listRowBackground(Color.clear) // Make row background clear
-                    }
-                }
-                .onDelete(perform: deleteItems)
-            }
-            .scrollContentBackground(.hidden)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
-            }
-        } detail: {
-            Text("Select an item")
-        }
-    }
+        ZStack {
+            LoadingView(showRegister: $showRegister)
 
-    private func addItem() {
-        withAnimation {
-            let newItem = Item(timestamp: Date())
-            modelContext.insert(newItem)
-        }
-    }
-
-    private func deleteItems(offsets: IndexSet) {
-        withAnimation {
-            for index in offsets {
-                modelContext.delete(items[index])
+            if showRegister {
+                RegisterView(showRegister: $showRegister)
+                    .transition(.move(edge: .bottom))
+                    .animation(.easeInOut(duration: 1), value: showRegister) // Adjust the duration as needed
             }
         }
     }
 }
 
-#Preview {
-    ContentView()
-        .modelContainer(for: Item.self, inMemory: true)
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }

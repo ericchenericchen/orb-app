@@ -1,43 +1,45 @@
-//
-//  RegisterView.swift
-//  Orbit
-//
-//  Created by Eric Chen on 7/15/24.
-//
-
 import SwiftUI
 
 struct RegisterView: View {
+    @Binding var showRegister: Bool
+
     var body: some View {
-        ZStack{
-            Color.bgBlue
+        ZStack {
+            Color.clear
+                .edgesIgnoringSafeArea(.all)
 
-            ZStack{
-                Text("orbit")
-                    .foregroundColor(.white)
-                    .font(.custom("HelveticaNeue", size: 55))
-            }.offset(x: 0, y: -UIScreen.main.bounds.height/6)
-            
-            //image test
-            ZStack{
-                // Glow effect
-                Circle()
-                    .fill(Color.bgGlow)
-                    .frame(width: UIScreen.main.bounds.width * 1.5, height: UIScreen.main.bounds.width * 1.5)
-                    .blur(radius: 120) // Adjust the blur radius as needed
-                    .opacity(0.75) // Adjust the opacity as needed
-                
-                Image("OrbitIcon")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: UIScreen.main.bounds.width * 1.5, height: UIScreen.main.bounds.width * 1.5)
+            VStack {
+                LinearGradient(gradient: Gradient(colors: [Color.white, .gradientBlack]),
+                               startPoint: .top,
+                               endPoint: .bottom)
+                    .opacity(0.4)
+                    .overlay(
+                        // Example content
+                        VStack {
+                            Text("Hello world!")
+                                .foregroundColor(.black)
+                            
+                            Button(action: {
+                                withAnimation {
+                                    showRegister.toggle()
+                                }
+                            }) {
+                                Text("Close Register")
+                            }
+                        }
+                    )
             }
-            .offset(x: 0, y: UIScreen.main.bounds.height / 3)
-        }.edgesIgnoringSafeArea(.all)
-
+            .frame(width: UIScreen.main.bounds.width * (385/430), height: UIScreen.main.bounds.height * (780/932))
+            .cornerRadius(20)
+            .shadow(radius: 10)
+            .background(Color.clear) // Ensure the background is clear
+            .padding(20)
+        }
     }
 }
 
-#Preview {
-    RegisterView()
+struct RegisterView_Previews: PreviewProvider {
+    static var previews: some View {
+        RegisterView(showRegister: .constant(true))
+    }
 }

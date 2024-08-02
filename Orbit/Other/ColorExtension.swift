@@ -13,6 +13,8 @@ extension Color {
     static let bgBlue = Color(hex: "0C1830")
     static let bgGlow = Color(hex: "8B9CF3")
     static let gradientBlack = Color(hex: "999999")
+    static let bgLightBlue = Color(hex: "82BDFD")
+    static let bgLightGrey = Color(hex: "999999")
     
     init(hex: String) {
         let scanner = Scanner(string: hex)

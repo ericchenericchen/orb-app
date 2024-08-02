@@ -8,23 +8,6 @@
 import SwiftUI
 import SwiftData
 
-// Custom view for circular item
-struct CircularItemView: View {
-    var timestamp: Date
-
-    var body: some View {
-        Circle()
-            .fill(Color.blue)
-            .frame(width: 150, height: 150)
-            .overlay(
-                Text(timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))
-                    .foregroundColor(.white)
-                    .padding(10)
-            )
-            .padding(5)
-    }
-}
-
 struct ContentView: View {
     @State private var showRegister = false
 

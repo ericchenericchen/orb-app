@@ -12,7 +12,10 @@ import SwiftData
 final class Item {
     var timestamp: Date
     
-    init(timestamp: Date) {
+    var label: String
+    
+    init(timestamp: Date, label: String) {
         self.timestamp = timestamp
+        self.label = label
     }
 }

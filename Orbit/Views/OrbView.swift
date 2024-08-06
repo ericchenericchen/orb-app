@@ -24,67 +24,73 @@ struct CircularItemView: View {
                 )
                 .padding(5)
         }
-            
-        }
-        
-        
+    }
 }
 
 struct OrbView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     @State private var newLabelText: String = ""
+    @State private var isAddItemViewVisible: Bool = true
 
-   
     var body: some View {
-        ZStack{
-            NavigationSplitView {
-                VStack {
-                    List {
-                        ForEach(items) { item in
-                            NavigationLink {
-                                ZStack{
-                                    Color.bgBlue
-                                    VStack {
-                                        Text("\"\(item.label)\"")
-                                            .foregroundColor(.white)
-                                        Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .standard))")
-                                            .foregroundColor(.white)
-                                    }
-                                    
+        NavigationSplitView {
+            ZStack {
+                List {
+                    ForEach(items) { item in
+                        NavigationLink {
+                            ZStack {
+                                Color.bgBlue
+                                VStack {
+                                    Text("\"\(item.label)\"")
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
+                                    Text("\(item.timestamp, format: Date.FormatStyle(date: .numeric, time: .shortened))")
+                                        .foregroundColor(.white)
+                                        .multilineTextAlignment(.center)
                                 }
-                                
                             }
-                            
-                        label: {
-                                HStack {
-                                    Spacer()
-                                    CircularItemView(label: item.label)
-                                    Spacer()
-                                }
-                                .listRowBackground(Color.bgBlue)
+                            .background(Color.bgBlue)
+                        } label: {
+                            HStack {
+                                Spacer()
+                                CircularItemView(label: String(item.label.prefix(40)) + (item.label.count > 40 ? "..." : ""))
+                                    .multilineTextAlignment(.center)
+                                Spacer()
                             }
-                            
                         }
-                        .onDelete(perform: deleteItems)
-                        .background(Color.bgBlue)
                     }
-                    
-                    .scrollContentBackground(.hidden)
-                    
-                    AddItemView(newLabelText: $newLabelText, addItemAction: addItem)
-                        .padding()
-                        .background(Color.bgBlue)
+                    .onDelete(perform: deleteItems)
+                    .listRowBackground(Color.bgBlue)
                 }
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
+                .scrollContentBackground(.hidden)
+                if isAddItemViewVisible {
+                    VStack {
+                        Spacer()
+                        AddItemView(newLabelText: $newLabelText, addItemAction: addItem)
+                            .opacity(0.9)
+                    }
+                    .frame(alignment: .bottom)
+                }
+
+                
+            }
+            
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    HStack {
+                        Button(action: {
+                            isAddItemViewVisible.toggle()
+                        }) {
+                            Text(isAddItemViewVisible ? "Hide Creator" : "Show Creator")
+                        }
                         EditButton()
                     }
                 }
-                .background(Color.bgBlue)
-            } detail: {
-                Text("Select an item")
             }
+            .background(Color.bgBlue)
+        } detail: {
+            Text("Select an item")
         }
     }
 

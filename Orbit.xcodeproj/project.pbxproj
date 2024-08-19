@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3848BBEB2C5C4CE700BC929F /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848BBEA2C5C4CE700BC929F /* AddItemView.swift */; };
+		380D88862C73E472001D9380 /* AddCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 380D88852C73E472001D9380 /* AddCollectionView.swift */; };
+		3848BBEB2C5C4CE700BC929F /* AddOrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848BBEA2C5C4CE700BC929F /* AddOrbView.swift */; };
 		3848BBED2C5C506000BC929F /* ContentViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848BBEC2C5C506000BC929F /* ContentViewViewModel.swift */; };
 		3848BBEF2C5C5B7A00BC929F /* OrbView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3848BBEE2C5C5B7A00BC929F /* OrbView.swift */; };
 		40BBBD042C52FDFC00CD6B54 /* OverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40BBBD032C52FDFC00CD6B54 /* OverlayView.swift */; };
@@ -44,7 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3848BBEA2C5C4CE700BC929F /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		380D88852C73E472001D9380 /* AddCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCollectionView.swift; sourceTree = "<group>"; };
+		3848BBEA2C5C4CE700BC929F /* AddOrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOrbView.swift; sourceTree = "<group>"; };
 		3848BBEC2C5C506000BC929F /* ContentViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentViewViewModel.swift; path = Orbit/Views/ContentViewViewModel.swift; sourceTree = SOURCE_ROOT; };
 		3848BBEE2C5C5B7A00BC929F /* OrbView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbView.swift; sourceTree = "<group>"; };
 		40BBBD032C52FDFC00CD6B54 /* OverlayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlayView.swift; sourceTree = "<group>"; };
@@ -156,7 +158,8 @@
 				40BFBF502C4887AC002C597B /* LoginView.swift */,
 				40BFBF522C48883F002C597B /* LoadingView.swift */,
 				40BBBD032C52FDFC00CD6B54 /* OverlayView.swift */,
-				3848BBEA2C5C4CE700BC929F /* AddItemView.swift */,
+				3848BBEA2C5C4CE700BC929F /* AddOrbView.swift */,
+				380D88852C73E472001D9380 /* AddCollectionView.swift */,
 				3848BBEE2C5C5B7A00BC929F /* OrbView.swift */,
 			);
 			path = Views;
@@ -329,11 +332,12 @@
 				3848BBEF2C5C5B7A00BC929F /* OrbView.swift in Sources */,
 				3848BBED2C5C506000BC929F /* ContentViewViewModel.swift in Sources */,
 				40BFBF4C2C45CE44002C597B /* RegisterView.swift in Sources */,
+				380D88862C73E472001D9380 /* AddCollectionView.swift in Sources */,
 				40BFBF1F2C45AA5E002C597B /* Item.swift in Sources */,
 				40BFBF1B2C45AA5E002C597B /* OrbitApp.swift in Sources */,
 				40BBBD082C6C093300CD6B54 /* CustomButton.swift in Sources */,
 				40BFBF532C48883F002C597B /* LoadingView.swift in Sources */,
-				3848BBEB2C5C4CE700BC929F /* AddItemView.swift in Sources */,
+				3848BBEB2C5C4CE700BC929F /* AddOrbView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

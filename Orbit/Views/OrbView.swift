@@ -31,7 +31,9 @@ struct OrbView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     @State private var newLabelText: String = ""
-    @State private var isAddItemViewVisible: Bool = true
+    @State private var newLabelTitle: String = ""
+    @State private var isAddOrbViewVisible: Bool = true
+    @State private var isAddCollectionViewVisible: Bool = true
 
     var body: some View {
         NavigationSplitView {
@@ -64,10 +66,18 @@ struct OrbView: View {
                     .listRowBackground(Color.bgBlue)
                 }
                 .scrollContentBackground(.hidden)
-                if isAddItemViewVisible {
+                if isAddOrbViewVisible {
                     VStack {
                         Spacer()
-                        AddItemView(newLabelText: $newLabelText, addItemAction: addItem)
+                        AddOrbView(newLabelText: $newLabelText, newLabelTitle: $newLabelTitle, addItemAction: addItem)
+                            .opacity(0.9)
+                    }
+                    .frame(alignment: .bottom)
+                }
+                if isAddCollectionViewVisible {
+                    VStack {
+                        Spacer()
+                        AddCollectionView(newLabelText: $newLabelText, newLabelTitle: $newLabelTitle, addItemAction: addItem)
                             .opacity(0.9)
                     }
                     .frame(alignment: .bottom)
@@ -80,10 +90,16 @@ struct OrbView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     HStack {
                         Button(action: {
-                            isAddItemViewVisible.toggle()
+                            isAddOrbViewVisible.toggle()
                         }) {
-                            Text(isAddItemViewVisible ? "Hide Creator" : "Show Creator")
+                            Text(isAddOrbViewVisible ? "Hide Add Orb" : "Show Add Orb")
                         }
+                        Button(action: {
+                            isAddCollectionViewVisible.toggle()
+                        }) {
+                            Text(isAddCollectionViewVisible ? "Hide Add Collection" : "Show Add Collection")
+                        }
+                        
                         EditButton()
                     }
                 }
